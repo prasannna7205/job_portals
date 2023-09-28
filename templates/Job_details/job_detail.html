@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <style>
+        /* Style for the body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+/* Container for the job details */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Header style */
+h1 {
+    color: #333;
+}
+
+/* Image style */
+img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Paragraph styles */
+p {
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Strong (bold) text styles */
+strong {
+    color: #333;
+}
+
+/* Link style */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Back to Job List link style */
+.back-link {
+    display: block;
+    margin-top: 20px;
+}
+
+    </style>
+    <body>
+
+        <h1>{{ job.jobname }}</h1>
+        <img src="{{ job.image.url }}" alt="{{ job.jobname }}"
+            style="max-width: 300px;">
+        <p><strong>Job Description:</strong></p>
+        <p>{{ job.postdescription }}</p>
+        <p><strong>People Required:</strong> {{ job.people_required }}</p>
+        <p><strong>Job Type:</strong> {{ job.job_type }}</p>
+        <p><strong>Salary:</strong> ${{ job.salary }}</p>
+        <a href="{% url 'job_list' %}">Back to Job List</a>
+
+    </body>
+</html>
